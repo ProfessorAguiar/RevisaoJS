@@ -26,8 +26,11 @@ const config = {
     "timeout": 0,
   };
   $.ajax(config).done(function (response) {
-    console.log(response);
+    console.log({response});
 
     document.querySelector('#Endereco').value=response.logradouro
+    document.querySelector('#bairro').value=response.bairro
+    document.querySelector('#cidade').value=response.localidade
+    document.querySelector('#estado').value=response.uf
   });
 })

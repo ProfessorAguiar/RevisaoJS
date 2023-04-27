@@ -23,7 +23,7 @@ form.addEventListener('submit',(e)=>{
     const rSenha=form.rSenha.value
     const cpf=form.cpf.value
     const cep=form.cep.value
-    const endereco=form.endereco.value
+    const endereco=form.Endereco.value
     const bairro=form.bairro.value
     const cidade=form.cidade.value
     const estado=form.estado.value
@@ -36,12 +36,27 @@ form.addEventListener('submit',(e)=>{
         resp.innerHTML='email Inválido'
     }else if(senha!=rSenha){
         resp.innerHTML='As senha precisam ser iguais!'
+    }else if(cpf.length<11 || cpf.length>11){
+        resp.innerHTML='Insira um CPF válido'
+    }else if(cep.length<8 || cep.length>8){
+        resp.innerHTML='Insira um CEP válido'
     }else{
         resp.innerHTML='Cadastrado com sucesso!'
         Cliente.id=Math.random
         Cliente.nome=nome
         Cliente.email=email
         Cliente.senha=senha
+        Cliente.cpf=cpf
+        Cliente.cep=cep
+        Cliente.endereco=endereco
+        Cliente.bairro=bairro
+        Cliente.cidade=cidade
+        Cliente.estado=estado
+        Cliente.numero=numero
+        Cliente.complemento=complemento
+        alert(`nome: ${Cliente.nome} - email: ${Cliente.email} -
+        Cadastrado com sucesso`)
+        console.log(Cliente)
     }
 })
 

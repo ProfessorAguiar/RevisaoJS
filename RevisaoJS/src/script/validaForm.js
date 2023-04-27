@@ -25,7 +25,7 @@ const config = {
     "method": "GET",
     "timeout": 0,
   };
-  $.ajax(config).done(function (response) {
+  $.ajax(config).done((response)=> {
     console.log({response});
 
     document.querySelector('#Endereco').value=response.logradouro
